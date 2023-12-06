@@ -1,0 +1,21 @@
+﻿<Window x:Class="WPF_ImageBlur.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_ImageBlur"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="950">
+
+    <Grid Background="Green">
+        
+        <Image x:Name="imageView" Source="Resources/cat.jpg" Stretch="None" Margin="0, 0, 0, 170">
+            <Image.Effect>
+                <BlurEffect Radius="{Binding ElementName=blurSlider, Path=Value}"/>
+            </Image.Effect>
+        </Image>
+
+        <Slider Background="Red" Name="blurSlider" Minimum="0" Maximum="100" Value="0" VerticalAlignment="Bottom" Margin="40, 70"/>
+    </Grid>
+
+</Window>
